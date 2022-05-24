@@ -76,10 +76,10 @@ func main() {
 
 	// Route handleds & endpoints
 	r.HandleFunc("/books", getBooks).Methods("GET")
-	r.HandleFunc("/books/{id}", getBook).Methods("GET")
+	r.HandleFunc("/books/id={id}", getBook).Methods("GET")
 	r.HandleFunc("/books", createBooks).Methods("POST")
-	r.HandleFunc("/books/{id}", updateBooks).Methods("PUT")
-	r.HandleFunc("/books/{id}", deleteBooks).Methods("DELETE")
+	r.HandleFunc("/books/id={id}", updateBooks).Methods("PUT")
+	r.HandleFunc("/books/id{id}", deleteBooks).Methods("DELETE")
 
 	// Start server
 	log.Fatal(http.ListenAndServe(":8000", r))
